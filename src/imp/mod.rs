@@ -158,6 +158,12 @@ pub enum Stmt {
   Return {
     term: Box<Expr>,
   },
+  // "open" {typ} ":" {var} ";"? {nxt}
+  Open {
+    typ: Name,
+    var: Name,
+    nxt: Box<Stmt>,
+  },
   #[default]
   Err,
 }
